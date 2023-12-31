@@ -1,0 +1,130 @@
+{
+  "0709996f-842f-4d9b-9d21-618afede1a91": {
+    "appActions": [
+      "CreatePageInSection",
+      "GetNotebooks",
+      "GetSectionsInNotebook"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "OneNote (Business)",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1666/1.0.1666.3495/onenote/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_onenote",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "OneNote(Business)"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "0709996f-842f-4d9b-9d21-618afede1a91"
+  },
+  "1ce5468b-4e5e-478a-91d9-14aad8c90f00": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Outlook Tasks",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/shgogna/version-mismatches-special-train/1.0.1670.3520/outlooktasks/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_outlooktasks",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "OutlookTasks"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "1ce5468b-4e5e-478a-91d9-14aad8c90f00"
+  },
+  "5867dfa2-c11f-4590-8528-e575cc1e8f82": {
+    "appActions": [
+      "CreateTask",
+      "ListMyPlans",
+      "ListBuckets"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Planner",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/jayawan/releases/v1.0.1655/1.0.1655.3424/planner/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_planner",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Planner"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "5867dfa2-c11f-4590-8528-e575cc1e8f82"
+  },
+  "6b2de656-facb-41aa-b502-bb84e6da4768": {
+    "appActions": [
+      "MyProfile",
+      "SearchUser",
+      "UserPhotoMetadata",
+      "UserPhoto",
+      "UserProfileV2"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Users",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Users"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "6b2de656-facb-41aa-b502-bb84e6da4768"
+  },
+  "b84d29d0-5308-4b11-89e9-65a038c53cff": {
+    "appActions": [
+      "CalendarGetTables",
+      "GetEventsCalendarView",
+      "SendEmail",
+      "V4CalendarPostItem",
+      "FindMeetingTimes"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1669/1.0.1669.3522/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Outlook"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "b84d29d0-5308-4b11-89e9-65a038c53cff"
+  },
+  "d9b30abf-7b16-468d-b192-7efdcb0c5104": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Microsoft To-Do (Business)",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1670/1.0.1670.3526/todo/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_todo",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "MicrosoftTo-Do(Business)"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "d9b30abf-7b16-468d-b192-7efdcb0c5104"
+  }
+}

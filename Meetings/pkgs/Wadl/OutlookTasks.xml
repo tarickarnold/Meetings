@@ -1,0 +1,1115 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://unitedstates-002.azure-apim.net/apim/outlooktasks" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="OutlookTasks" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="Outlook Tasks">Outlook Tasks service lets you create, read, synchronize, update and delete your tasks that are secured by Azure Active Directory in Office 365 or a Microsoft account.</doc>
+  <grammars>
+    <jsonTypes targetNamespace="https://unitedstates-002.azure-apim.net/apim/outlooktasks" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+      <string name="TaskFolder__ux40_odata_id_def" />
+      <string name="TaskFolder_Id_def" />
+      <string name="TaskFolder_Name_def" />
+      <string name="TaskFolder_ChangeKey_def" />
+      <boolean name="TaskFolder_IsDefaultFolder_def" />
+      <string name="TaskFolder_ParentGroupKey_def" />
+      <object name="TaskFolder">
+        <property name="@odata.id" type="string" />
+        <property name="Id" type="string" />
+        <property name="Name" type="string" />
+        <property name="ChangeKey" type="string" />
+        <property name="IsDefaultFolder" type="boolean" />
+        <property name="ParentGroupKey" type="string" />
+      </object>
+      <string name="TaskGroup__ux40_odata_id_def" />
+      <string name="TaskGroup_Id_def" />
+      <string name="TaskGroup_Name_def" />
+      <string name="TaskGroup_ChangeKey_def" />
+      <boolean name="TaskGroup_IsDefaultGroup_def" />
+      <string name="TaskGroup_GroupKey_def" />
+      <object name="TaskGroup">
+        <property name="@odata.id" type="string" />
+        <property name="Id" type="string" />
+        <property name="Name" type="string" />
+        <property name="ChangeKey" type="string" />
+        <property name="IsDefaultGroup" type="boolean" />
+        <property name="GroupKey" type="string" />
+      </object>
+      <string name="TaskOS__ux40_odata_id_def" />
+      <string name="TaskOS__ux40_odata_etag_def" />
+      <string name="TaskOS_Id_def" />
+      <string name="TaskOS_ChangeKey_def" />
+      <string name="TaskOS_ParentFolderId_def" />
+      <string name="TaskOS_AssignedTo_def" />
+      <string name="TaskOS_Owner_def" />
+      <dateTimeString name="TaskOS_CreatedDateTime_def" />
+      <dateTimeString name="TaskOS_LastModifiedDateTime_def" />
+      <boolean name="TaskOS_HasAttachments_def" />
+      <string name="TaskOS_Body_def_ContentType_def" />
+      <string name="TaskOS_Body_def_Content_def" />
+      <object name="TaskOS_Body_def">
+        <property name="ContentType" type="string" />
+        <property name="Content" type="string" />
+      </object>
+      <string name="TaskOS_StartDateTime_def_DateTime_def" />
+      <object name="TaskOS_StartDateTime_def">
+        <property name="DateTime" type="string" />
+        <property name="TimeZone" type="string" />
+      </object>
+      <string name="TaskOS_DueDateTime_def_DateTime_def" />
+      <object name="TaskOS_DueDateTime_def">
+        <property name="DateTime" type="string" />
+        <property name="TimeZone" type="string" />
+      </object>
+      <string name="TaskOS_CompletedDateTime_def_DateTime_def" />
+      <object name="TaskOS_CompletedDateTime_def">
+        <property name="DateTime" type="string" />
+        <property name="TimeZone" type="string" />
+      </object>
+      <string name="TaskOS_ReminderDateTime_def_DateTime_def" />
+      <object name="TaskOS_ReminderDateTime_def">
+        <property name="DateTime" type="string" />
+        <property name="TimeZone" type="string" />
+      </object>
+      <object name="TaskOS">
+        <property name="@odata.id" type="string" />
+        <property name="@odata.etag" type="string" />
+        <property name="Id" type="string" />
+        <property name="ChangeKey" type="string" />
+        <property name="ParentFolderId" type="string" />
+        <property name="AssignedTo" type="string" />
+        <property name="Owner" type="string" />
+        <property name="CreatedDateTime" typeRef="TaskOS_CreatedDateTime_def" />
+        <property name="LastModifiedDateTime" typeRef="TaskOS_LastModifiedDateTime_def" />
+        <property name="HasAttachments" type="boolean" />
+        <property name="Status" type="string" />
+        <property name="Subject" type="string" />
+        <property name="Body" typeRef="TaskOS_Body_def" />
+        <property name="Categories" typeRef="TaskOS-Categories" />
+        <property name="Importance" type="string" />
+        <property name="Sensitivity" type="string" />
+        <property name="StartDateTime" typeRef="TaskOS_StartDateTime_def" />
+        <property name="DueDateTime" typeRef="TaskOS_DueDateTime_def" />
+        <property name="CompletedDateTime" typeRef="TaskOS_CompletedDateTime_def" />
+        <property name="IsReminderOn" type="boolean" />
+        <property name="ReminderDateTime" typeRef="TaskOS_ReminderDateTime_def" />
+      </object>
+      <string name="TaskOS-Status" />
+      <string name="TaskOS-Subject" />
+      <string name="TaskOS-Categories_items_def" />
+      <array type="string" name="TaskOS-Categories" />
+      <string name="TaskOS-Importance" />
+      <string name="TaskOS-Sensitivity" />
+      <boolean name="TaskOS-IsReminderOn" />
+      <object name="create-TaskOS">
+        <property name="Status" type="string" />
+        <property name="Subject" type="string" />
+        <property name="Body" typeRef="request-TaskOS-Body" />
+        <property name="Categories" typeRef="TaskOS-Categories" />
+        <property name="Importance" type="string" />
+        <property name="Sensitivity" type="string" />
+        <property name="StartDateTime" typeRef="request-TaskOS-StartDateTime" />
+        <property name="DueDateTime" typeRef="request-TaskOS-DueDateTime" />
+        <property name="CompletedDateTime" typeRef="request-TaskOS-CompletedDateTime" />
+        <property name="IsReminderOn" type="boolean" />
+        <property name="ReminderDateTime" typeRef="request-TaskOS-ReminderDateTime" />
+      </object>
+      <object name="patch-TaskOS">
+        <property name="Status" type="string" />
+        <property name="Subject" type="string" />
+        <property name="Body" typeRef="request-TaskOS-Body" />
+        <property name="Categories" typeRef="TaskOS-Categories" />
+        <property name="Importance" type="string" />
+        <property name="Sensitivity" type="string" />
+        <property name="StartDateTime" typeRef="request-TaskOS-StartDateTime" />
+        <property name="DueDateTime" typeRef="request-TaskOS-DueDateTime" />
+        <property name="CompletedDateTime" typeRef="request-TaskOS-CompletedDateTime" />
+        <property name="IsReminderOn" type="boolean" />
+        <property name="ReminderDateTime" typeRef="request-TaskOS-ReminderDateTime" />
+      </object>
+      <string name="request-TaskOS-Body_ContentType_def" />
+      <string name="request-TaskOS-Body_Content_def" />
+      <object name="request-TaskOS-Body">
+        <property name="ContentType" type="string" />
+        <property name="Content" type="string" />
+      </object>
+      <string name="request-TaskOS-StartDateTime_DateTime_def" />
+      <object name="request-TaskOS-StartDateTime">
+        <property name="DateTime" type="string" />
+        <property name="TimeZone" type="string" />
+      </object>
+      <string name="request-TaskOS-DueDateTime_DateTime_def" />
+      <object name="request-TaskOS-DueDateTime">
+        <property name="DateTime" type="string" />
+        <property name="TimeZone" type="string" />
+      </object>
+      <string name="request-TaskOS-CompletedDateTime_DateTime_def" />
+      <object name="request-TaskOS-CompletedDateTime">
+        <property name="DateTime" type="string" />
+        <property name="TimeZone" type="string" />
+      </object>
+      <string name="request-TaskOS-ReminderDateTime_DateTime_def" />
+      <object name="request-TaskOS-ReminderDateTime">
+        <property name="DateTime" type="string" />
+        <property name="TimeZone" type="string" />
+      </object>
+      <string name="DateTimeTimeZone-TimeZone" />
+      <string name="request-DateTimeTimeZone-TimeZone" />
+      <string name="IncompleteTaskBody_Status_def" />
+      <dateTimeString name="IncompleteTaskBody_CompletedDateTime_def_DateTime_def" />
+      <string name="IncompleteTaskBody_CompletedDateTime_def_TimeZone_def" />
+      <object name="IncompleteTaskBody_CompletedDateTime_def">
+        <property name="DateTime" typeRef="IncompleteTaskBody_CompletedDateTime_def_DateTime_def" />
+        <property name="TimeZone" type="string" />
+      </object>
+      <object name="IncompleteTaskBody">
+        <property name="Status" type="string" />
+        <property name="CompletedDateTime" typeRef="IncompleteTaskBody_CompletedDateTime_def" />
+      </object>
+      <string name="Task__ux40_odata_context_def" />
+      <string name="Task__ux40_odata_id_def" />
+      <string name="Task__ux40_odata_etag_def" />
+      <string name="Task_Id_def" />
+      <dateTimeString name="Task_CreatedDateTime_def" />
+      <dateTimeString name="Task_LastModifiedDateTime_def" />
+      <string name="Task_ChangeKey_def" />
+      <string name="Task_Categories_def_items_def" />
+      <array type="string" name="Task_Categories_def" />
+      <string name="Task_AssignedTo_def" />
+      <string name="Task_Body_def_ContentType_def" />
+      <string name="Task_Body_def_Content_def" />
+      <object name="Task_Body_def">
+        <property name="ContentType" type="string" />
+        <property name="Content" type="string" />
+      </object>
+      <dateTimeString name="Task_CompletedDateTime_def_DateTime_def" />
+      <object name="Task_CompletedDateTime_def">
+        <property name="DateTime" typeRef="Task_CompletedDateTime_def_DateTime_def" />
+      </object>
+      <dateTimeString name="Task_DueDateTime_def_DateTime_def" />
+      <object name="Task_DueDateTime_def">
+        <property name="DateTime" typeRef="Task_DueDateTime_def_DateTime_def" />
+      </object>
+      <string name="Task_Importance_def" />
+      <boolean name="Task_IsReminderOn_def" />
+      <string name="Task_Owner_def" />
+      <string name="Task_ParentFolderId_def" />
+      <dateTimeString name="Task_ReminderDateTime_def_DateTime_def" />
+      <object name="Task_ReminderDateTime_def">
+        <property name="DateTime" typeRef="Task_ReminderDateTime_def_DateTime_def" />
+      </object>
+      <dateTimeString name="Task_StartDateTime_def_DateTime_def" />
+      <object name="Task_StartDateTime_def">
+        <property name="DateTime" typeRef="Task_StartDateTime_def_DateTime_def" />
+      </object>
+      <string name="Task_Status_def" />
+      <string name="Task_Subject_def" />
+      <object name="Task">
+        <property name="@odata.context" type="string" />
+        <property name="@odata.id" type="string" />
+        <property name="@odata.etag" type="string" />
+        <property name="Id" type="string" />
+        <property name="CreatedDateTime" typeRef="Task_CreatedDateTime_def" />
+        <property name="LastModifiedDateTime" typeRef="Task_LastModifiedDateTime_def" />
+        <property name="ChangeKey" type="string" />
+        <property name="Categories" typeRef="Task_Categories_def" />
+        <property name="AssignedTo" type="string" />
+        <property name="Body" typeRef="Task_Body_def" />
+        <property name="CompletedDateTime" typeRef="Task_CompletedDateTime_def" />
+        <property name="DueDateTime" typeRef="Task_DueDateTime_def" />
+        <property name="Importance" type="string" />
+        <property name="IsReminderOn" type="boolean" />
+        <property name="Owner" type="string" />
+        <property name="ParentFolderId" type="string" />
+        <property name="ReminderDateTime" typeRef="Task_ReminderDateTime_def" />
+        <property name="StartDateTime" typeRef="Task_StartDateTime_def" />
+        <property name="Status" type="string" />
+        <property name="Subject" type="string" />
+      </object>
+      <string name="TaskHTML__ux40_odata_context_def" />
+      <string name="TaskHTML__ux40_odata_id_def" />
+      <string name="TaskHTML__ux40_odata_etag_def" />
+      <string name="TaskHTML_Id_def" />
+      <dateTimeString name="TaskHTML_CreatedDateTime_def" />
+      <dateTimeString name="TaskHTML_LastModifiedDateTime_def" />
+      <string name="TaskHTML_ChangeKey_def" />
+      <string name="TaskHTML_Categories_def_items_def" />
+      <array type="string" name="TaskHTML_Categories_def" />
+      <string name="TaskHTML_AssignedTo_def" />
+      <string name="TaskHTML_Body_def_Content_def" />
+      <object name="TaskHTML_Body_def">
+        <property name="Content" type="string" />
+      </object>
+      <dateTimeString name="TaskHTML_CompletedDateTime_def_DateTime_def" />
+      <object name="TaskHTML_CompletedDateTime_def">
+        <property name="DateTime" typeRef="TaskHTML_CompletedDateTime_def_DateTime_def" />
+      </object>
+      <dateTimeString name="TaskHTML_DueDateTime_def_DateTime_def" />
+      <object name="TaskHTML_DueDateTime_def">
+        <property name="DateTime" typeRef="TaskHTML_DueDateTime_def_DateTime_def" />
+      </object>
+      <string name="TaskHTML_Importance_def" />
+      <boolean name="TaskHTML_IsReminderOn_def" />
+      <string name="TaskHTML_Owner_def" />
+      <string name="TaskHTML_ParentFolderId_def" />
+      <dateTimeString name="TaskHTML_ReminderDateTime_def_DateTime_def" />
+      <object name="TaskHTML_ReminderDateTime_def">
+        <property name="DateTime" typeRef="TaskHTML_ReminderDateTime_def_DateTime_def" />
+      </object>
+      <dateTimeString name="TaskHTML_StartDateTime_def_DateTime_def" />
+      <object name="TaskHTML_StartDateTime_def">
+        <property name="DateTime" typeRef="TaskHTML_StartDateTime_def_DateTime_def" />
+      </object>
+      <string name="TaskHTML_Status_def" />
+      <string name="TaskHTML_Subject_def" />
+      <object name="TaskHTML">
+        <property name="@odata.context" type="string" />
+        <property name="@odata.id" type="string" />
+        <property name="@odata.etag" type="string" />
+        <property name="Id" type="string" />
+        <property name="CreatedDateTime" typeRef="TaskHTML_CreatedDateTime_def" />
+        <property name="LastModifiedDateTime" typeRef="TaskHTML_LastModifiedDateTime_def" />
+        <property name="ChangeKey" type="string" />
+        <property name="Categories" typeRef="TaskHTML_Categories_def" />
+        <property name="AssignedTo" type="string" />
+        <property name="Body" typeRef="TaskHTML_Body_def" />
+        <property name="CompletedDateTime" typeRef="TaskHTML_CompletedDateTime_def" />
+        <property name="DueDateTime" typeRef="TaskHTML_DueDateTime_def" />
+        <property name="Importance" type="string" />
+        <property name="IsReminderOn" type="boolean" />
+        <property name="Owner" type="string" />
+        <property name="ParentFolderId" type="string" />
+        <property name="ReminderDateTime" typeRef="TaskHTML_ReminderDateTime_def" />
+        <property name="StartDateTime" typeRef="TaskHTML_StartDateTime_def" />
+        <property name="Status" type="string" />
+        <property name="Subject" type="string" />
+      </object>
+      <dateTimeString name="CreateTaskBody_DueDateTime_def_DateTime_def" />
+      <string name="CreateTaskBody_DueDateTime_def_TimeZone_def" />
+      <object name="CreateTaskBody_DueDateTime_def">
+        <property name="DateTime" typeRef="CreateTaskBody_DueDateTime_def_DateTime_def" />
+        <property name="TimeZone" type="string" />
+      </object>
+      <dateTimeString name="CreateTaskBody_ReminderDateTime_def_DateTime_def" />
+      <string name="CreateTaskBody_ReminderDateTime_def_TimeZone_def" />
+      <object name="CreateTaskBody_ReminderDateTime_def">
+        <property name="DateTime" typeRef="CreateTaskBody_ReminderDateTime_def_DateTime_def" />
+        <property name="TimeZone" type="string" />
+      </object>
+      <dateTimeString name="CreateTaskBody_StartDateTime_def_DateTime_def" />
+      <string name="CreateTaskBody_StartDateTime_def_TimeZone_def" />
+      <object name="CreateTaskBody_StartDateTime_def">
+        <property name="DateTime" typeRef="CreateTaskBody_StartDateTime_def_DateTime_def" />
+        <property name="TimeZone" type="string" />
+      </object>
+      <string name="CreateTaskBody_Importance_def" />
+      <string name="CreateTaskBody_Subject_def" />
+      <string name="CreateTaskBody_Status_def" />
+      <string name="CreateTaskBody_Sensitivity_def" />
+      <string name="CreateTaskBody_Body_def_ContentType_def" />
+      <string name="CreateTaskBody_Body_def_Content_def" />
+      <object name="CreateTaskBody_Body_def">
+        <property name="ContentType" type="string" />
+        <property name="Content" type="string" />
+      </object>
+      <string name="CreateTaskBody_Categories_def_items_def" />
+      <array type="string" name="CreateTaskBody_Categories_def" />
+      <boolean name="CreateTaskBody_IsReminderOn_def" />
+      <object name="CreateTaskBody">
+        <property name="DueDateTime" typeRef="CreateTaskBody_DueDateTime_def" />
+        <property name="ReminderDateTime" typeRef="CreateTaskBody_ReminderDateTime_def" />
+        <property name="StartDateTime" typeRef="CreateTaskBody_StartDateTime_def" />
+        <property name="Importance" type="string" />
+        <property name="Subject" type="string" />
+        <property name="Status" type="string" />
+        <property name="Sensitivity" type="string" />
+        <property name="Body" typeRef="CreateTaskBody_Body_def" />
+        <property name="Categories" typeRef="CreateTaskBody_Categories_def" />
+        <property name="IsReminderOn" type="boolean" />
+      </object>
+      <dateTimeString name="CreateTaskHTMLBody_DueDateTime_def_DateTime_def" />
+      <string name="CreateTaskHTMLBody_DueDateTime_def_TimeZone_def" />
+      <object name="CreateTaskHTMLBody_DueDateTime_def">
+        <property name="DateTime" typeRef="CreateTaskHTMLBody_DueDateTime_def_DateTime_def" />
+        <property name="TimeZone" type="string" />
+      </object>
+      <dateTimeString name="CreateTaskHTMLBody_ReminderDateTime_def_DateTime_def" />
+      <string name="CreateTaskHTMLBody_ReminderDateTime_def_TimeZone_def" />
+      <object name="CreateTaskHTMLBody_ReminderDateTime_def">
+        <property name="DateTime" typeRef="CreateTaskHTMLBody_ReminderDateTime_def_DateTime_def" />
+        <property name="TimeZone" type="string" />
+      </object>
+      <dateTimeString name="CreateTaskHTMLBody_StartDateTime_def_DateTime_def" />
+      <string name="CreateTaskHTMLBody_StartDateTime_def_TimeZone_def" />
+      <object name="CreateTaskHTMLBody_StartDateTime_def">
+        <property name="DateTime" typeRef="CreateTaskHTMLBody_StartDateTime_def_DateTime_def" />
+        <property name="TimeZone" type="string" />
+      </object>
+      <string name="CreateTaskHTMLBody_Importance_def" />
+      <string name="CreateTaskHTMLBody_Subject_def" />
+      <string name="CreateTaskHTMLBody_Status_def" />
+      <string name="CreateTaskHTMLBody_Sensitivity_def" />
+      <string name="CreateTaskHTMLBody_Body_def_ContentType_def" />
+      <string name="CreateTaskHTMLBody_Body_def_Content_def" />
+      <object name="CreateTaskHTMLBody_Body_def">
+        <property name="ContentType" type="string" />
+        <property name="Content" type="string" />
+      </object>
+      <string name="CreateTaskHTMLBody_Categories_def_items_def" />
+      <array type="string" name="CreateTaskHTMLBody_Categories_def" />
+      <boolean name="CreateTaskHTMLBody_IsReminderOn_def" />
+      <object name="CreateTaskHTMLBody">
+        <property name="DueDateTime" typeRef="CreateTaskHTMLBody_DueDateTime_def" />
+        <property name="ReminderDateTime" typeRef="CreateTaskHTMLBody_ReminderDateTime_def" />
+        <property name="StartDateTime" typeRef="CreateTaskHTMLBody_StartDateTime_def" />
+        <property name="Importance" type="string" />
+        <property name="Subject" type="string" />
+        <property name="Status" type="string" />
+        <property name="Sensitivity" type="string" />
+        <property name="Body" typeRef="CreateTaskHTMLBody_Body_def" />
+        <property name="Categories" typeRef="CreateTaskHTMLBody_Categories_def" />
+        <property name="IsReminderOn" type="boolean" />
+      </object>
+      <array typeRef="TaskFolder" name="responses_OdataCollection_ux3C_TaskFolder_ux3E__def_value_def" />
+      <object name="responses_OdataCollection_ux3C_TaskFolder_ux3E__def">
+        <property name="value" typeRef="responses_OdataCollection_ux3C_TaskFolder_ux3E__def_value_def" />
+      </object>
+      <array typeRef="TaskGroup" name="responses_OdataCollection_ux3C_TaskGroup_ux3E__def_value_def" />
+      <object name="responses_OdataCollection_ux3C_TaskGroup_ux3E__def">
+        <property name="value" typeRef="responses_OdataCollection_ux3C_TaskGroup_ux3E__def_value_def" />
+      </object>
+      <array typeRef="TaskOS" name="responses_OdataCollection_ux3C_TaskOS_ux3E__def_value_def" />
+      <object name="responses_OdataCollection_ux3C_TaskOS_ux3E__def">
+        <property name="value" typeRef="responses_OdataCollection_ux3C_TaskOS_ux3E__def_value_def" />
+      </object>
+      <array typeRef="TaskOS" name="CompleteTask_V2_responses_200_def_value_def" />
+      <object name="CompleteTask_V2_responses_200_def">
+        <property name="value" typeRef="CompleteTask_V2_responses_200_def_value_def" />
+      </object>
+      <array typeRef="TaskGroup" name="GetTaskGroups_responses_200_def" />
+      <array typeRef="TaskFolder" name="GetTaskFolders_responses_200_def" />
+      <array typeRef="Task" name="GetTasksByFolder_responses_200_def" />
+      <array typeRef="Task" name="GetAllTasks_responses_200_def" />
+    </jsonTypes>
+  </grammars>
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://unitedstates-002.azure-apim.net/apim/outlooktasks">
+    <resource path="/{connectionId}/v2/me/taskfolders">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="GetAllTaskFoldersV2" actionName="GetAllTaskFolders_V2" siena:isDeprecated="false" siena:family="GetAllTaskFolders" siena:revision="2" siena:status="Preview">
+        <doc title="List all task folders&#xA;Returns a list of all the task folders in your mailbox." />
+        <request>
+          <param style="query" name="$filter" type="xs:string">
+            <doc title="OData $filter. e.g. `contains(Name, 'custom')`.&#xA;Filterable properties: Name." />
+          </param>
+          <param style="query" name="$top" type="xs:long">
+            <doc title="The number of items in the queried collection to be included in the result." />
+          </param>
+          <param style="query" name="$skip" type="xs:long">
+            <doc title="The number of items in the queried collection that are to be skipped and not included in the result. This is applied before the $top option." />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:responses_OdataCollection_ux3C_TaskFolder_ux3E__def" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/v2/me/taskfolders">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="CreateTaskFolderV2" actionName="CreateTaskFolder_V2" siena:isDeprecated="false" siena:family="CreateTaskFolder" siena:revision="2" siena:status="Preview">
+        <doc title="Create a task folder&#xA;This operation creates a new task folder in the default task group (`My Tasks`) in your mailbox." />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="@odata.id" path="/@odata.id" type="xs:string" />
+            <param style="plain" name="Id" path="/Id" type="xs:string">
+              <doc title="Id" />
+            </param>
+            <param style="plain" name="Name" path="/Name" type="xs:string" required="true">
+              <doc title="Name" />
+            </param>
+            <param style="plain" name="ChangeKey" path="/ChangeKey" type="xs:string" />
+            <param style="plain" name="IsDefaultFolder" path="/IsDefaultFolder" type="xs:boolean" />
+            <param style="plain" name="ParentGroupKey" path="/ParentGroupKey" type="xs:string" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:TaskFolder" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/v1/me/taskfolders('{folder_id}')">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="folder_id" type="xs:string" required="true">
+        <doc title="The default 'Tasks' well-known folder name, or a programatic ID of a task folder, unique in the user's mailbox." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="GetTaskFolder" actionName="GetTaskFolder" siena:isDeprecated="false" siena:family="GetTaskFolder" siena:revision="1" siena:status="Preview">
+        <doc title="Get a task folder&#xA;This operation gets a specific task folder." />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:TaskFolder" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/v1/me/taskfolders('{folder_id}')">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="folder_id" type="xs:string" required="true">
+        <doc title="The default 'Tasks' well-known folder name, or a programatic ID of a task folder, unique in the user's mailbox." />
+      </param>
+      <method siena:requiresAuthentication="true" name="PATCH" id="UpdateTaskFolder" actionName="UpdateTaskFolder" siena:isDeprecated="false" siena:family="UpdateTaskFolder" siena:revision="1" siena:status="Preview">
+        <doc title="Update a task folder&#xA;This operation is used to modify an existing task folder." />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="@odata.id" path="/@odata.id" type="xs:string" />
+            <param style="plain" name="Id" path="/Id" type="xs:string">
+              <doc title="Id" />
+            </param>
+            <param style="plain" name="Name" path="/Name" type="xs:string" required="true">
+              <doc title="Name" />
+            </param>
+            <param style="plain" name="ChangeKey" path="/ChangeKey" type="xs:string" />
+            <param style="plain" name="IsDefaultFolder" path="/IsDefaultFolder" type="xs:boolean" />
+            <param style="plain" name="ParentGroupKey" path="/ParentGroupKey" type="xs:string" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:TaskFolder" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/v2/me/taskgroups">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="GetAllTaskGroupsV2" actionName="GetAllTaskGroups_V2" siena:isDeprecated="false" siena:family="GetAllTaskGroups" siena:revision="2" siena:status="Preview">
+        <doc title="List all task groups&#xA;Returns a list of all the task groups in your mailbox." />
+        <request>
+          <param style="query" name="$filter" type="xs:string">
+            <doc title="OData $filter. e.g. `contains(Name, 'custom')`.&#xA;Filterable properties: Name." />
+          </param>
+          <param style="query" name="$top" type="xs:long">
+            <doc title="The number of items in the queried collection to be included in the result." />
+          </param>
+          <param style="query" name="$skip" type="xs:long">
+            <doc title="The number of items in the queried collection that are to be skipped and not included in the result. This is applied before the $top option." />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:responses_OdataCollection_ux3C_TaskGroup_ux3E__def" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/v2/me/taskgroups">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="CreateTaskGroupV2" actionName="CreateTaskGroup_V2" siena:isDeprecated="false" siena:family="CreateTaskGroup" siena:revision="2" siena:status="Preview">
+        <doc title="Create a task group&#xA;This operation creates a new task group in your mailbox." />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="@odata.id" path="/@odata.id" type="xs:string" />
+            <param style="plain" name="Id" path="/Id" type="xs:string">
+              <doc title="Id" />
+            </param>
+            <param style="plain" name="Name" path="/Name" type="xs:string" required="true">
+              <doc title="Name" />
+            </param>
+            <param style="plain" name="ChangeKey" path="/ChangeKey" type="xs:string" />
+            <param style="plain" name="IsDefaultGroup" path="/IsDefaultGroup" type="xs:boolean" />
+            <param style="plain" name="GroupKey" path="/GroupKey" type="xs:string" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:TaskGroup" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/v1/me/taskgroups('{group_id}')">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="group_id" type="xs:string" required="true">
+        <doc title="The programatic ID of a task group, unique in the user's mailbox." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="GetTaskGroupV1" actionName="GetTaskGroup_V1" siena:isDeprecated="false" siena:family="GetTaskGroup" siena:revision="1" siena:status="Preview">
+        <doc title="Get a task group&#xA;This operation gets a specific task group." />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:TaskGroup" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/v1/me/taskgroups('{group_id}')">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="group_id" type="xs:string" required="true">
+        <doc title="The programatic ID of a task group, unique in the user's mailbox." />
+      </param>
+      <method siena:requiresAuthentication="true" name="PATCH" id="UpdateTaskGroupV1" actionName="UpdateTaskGroup_V1" siena:isDeprecated="false" siena:family="UpdateTaskGroup" siena:revision="1" siena:status="Preview">
+        <doc title="Update a task group&#xA;This operation is used to modify an existing task group." />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="@odata.id" path="/@odata.id" type="xs:string" />
+            <param style="plain" name="Id" path="/Id" type="xs:string">
+              <doc title="Id" />
+            </param>
+            <param style="plain" name="Name" path="/Name" type="xs:string" required="true">
+              <doc title="Name" />
+            </param>
+            <param style="plain" name="ChangeKey" path="/ChangeKey" type="xs:string" />
+            <param style="plain" name="IsDefaultGroup" path="/IsDefaultGroup" type="xs:boolean" />
+            <param style="plain" name="GroupKey" path="/GroupKey" type="xs:string" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:TaskGroup" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/v2/me/taskgroups('{group_id}')/taskfolders">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="group_id" type="xs:string" required="true">
+        <doc title="The programatic ID of a task group, unique in the user's mailbox." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="GetTaskFoldersInGroupV2" actionName="GetTaskFoldersInGroup_V2" siena:isDeprecated="false" siena:family="GetTaskFoldersInGroup" siena:revision="2" siena:status="Preview">
+        <doc title="List task folders in group&#xA;Returns a list of all the task folders in the specified task group in your mailbox." />
+        <request>
+          <param style="query" name="$filter" type="xs:string">
+            <doc title="OData $filter. e.g. `contains(Name, 'custom')`.&#xA;Filterable properties: Name." />
+          </param>
+          <param style="query" name="$top" type="xs:long">
+            <doc title="The number of items in the queried collection to be included in the result." />
+          </param>
+          <param style="query" name="$skip" type="xs:long">
+            <doc title="The number of items in the queried collection that are to be skipped and not included in the result. This is applied before the $top option." />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:responses_OdataCollection_ux3C_TaskFolder_ux3E__def" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/v2/me/taskgroups('{group_id}')/taskfolders">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="group_id" type="xs:string" required="true">
+        <doc title="The programatic ID of a task group, unique in the user's mailbox." />
+      </param>
+      <method siena:requiresAuthentication="true" name="POST" id="CreateTaskFolderInGroupV2" actionName="CreateTaskFolderInGroup_V2" siena:isDeprecated="false" siena:family="CreateTaskFolderInGroup" siena:revision="2" siena:status="Preview">
+        <doc title="Create a task folder in a task group&#xA;This operation creates a new task folder in the specified task group in your mailbox." />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="@odata.id" path="/@odata.id" type="xs:string" />
+            <param style="plain" name="Id" path="/Id" type="xs:string">
+              <doc title="Id" />
+            </param>
+            <param style="plain" name="Name" path="/Name" type="xs:string" required="true">
+              <doc title="Name" />
+            </param>
+            <param style="plain" name="ChangeKey" path="/ChangeKey" type="xs:string" />
+            <param style="plain" name="IsDefaultFolder" path="/IsDefaultFolder" type="xs:boolean" />
+            <param style="plain" name="ParentGroupKey" path="/ParentGroupKey" type="xs:string" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:TaskFolder" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/v2/me/tasks">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="GetAllTasksV2" actionName="GetAllTasks_V2" siena:isDeprecated="false" siena:family="GetAllTasks" siena:revision="2" siena:status="Preview">
+        <doc title="List all tasks&#xA;Returns a list of all your tasks in your mailbox." />
+        <request>
+          <param style="query" name="$filter" type="xs:string">
+            <doc title="OData $filter. e.g. To return only incomplete tasks: `Status ne 'Completed'`.&#xA;e.g. Search by subject: `contains(Subject, 'some text')`.&#xA;e.g. Return tasks that have been modified after a certain date: `LastModifiedDateTime gt 2020-03-27T19:00:00z`.&#xA;Common filterable properties: Subject, Status, Categories, Importance, Sensitivity, CreatedDateTime, LastModifiedDateTime, StartDateTime, DueDateTime, CompletedDateTime, HasAttachments." />
+          </param>
+          <param style="query" name="$top" type="xs:long">
+            <doc title="The number of items in the queried collection to be included in the result." />
+          </param>
+          <param style="query" name="$skip" type="xs:long">
+            <doc title="The number of items in the queried collection that are to be skipped and not included in the result. This is applied before the $top option." />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:responses_OdataCollection_ux3C_TaskOS_ux3E__def" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/v2/me/taskfolders('{folder_id}')/tasks">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="folder_id" type="xs:string" required="true">
+        <doc title="The default 'Tasks' well-known folder name, or a programatic ID of a task folder, unique in the user's mailbox." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="GetTasksInFolderV2" actionName="GetTasksInFolder_V2" siena:isDeprecated="false" siena:family="GetTasksInFolder" siena:revision="2" siena:status="Preview">
+        <doc title="List tasks in folder&#xA;Returns a list of all your tasks in the specified task folder in your mailbox." />
+        <request>
+          <param style="query" name="$filter" type="xs:string">
+            <doc title="OData $filter. e.g. To return only incomplete tasks: `Status ne 'Completed'`.&#xA;e.g. Search by subject: `contains(Subject, 'some text')`.&#xA;e.g. Return tasks that have been modified after a certain date: `LastModifiedDateTime gt 2020-03-27T19:00:00z`.&#xA;Common filterable properties: Subject, Status, Categories, Importance, Sensitivity, CreatedDateTime, LastModifiedDateTime, StartDateTime, DueDateTime, CompletedDateTime, HasAttachments." />
+          </param>
+          <param style="query" name="$top" type="xs:long">
+            <doc title="The number of items in the queried collection to be included in the result." />
+          </param>
+          <param style="query" name="$skip" type="xs:long">
+            <doc title="The number of items in the queried collection that are to be skipped and not included in the result. This is applied before the $top option." />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:responses_OdataCollection_ux3C_TaskOS_ux3E__def" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/v3/me/tasks">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="CreateTaskV3" actionName="CreateTask_V3" siena:isDeprecated="false" siena:family="CreateTask" siena:revision="3" siena:status="Preview">
+        <doc title="Create a task&#xA;This operation creates a new task in the default task folder (`Tasks`) in your mailbox." />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="Status" path="/Status" type="xs:string">
+              <doc title="Status" />
+              <option value="NotStarted" />
+              <option value="InProgress" />
+              <option value="Completed" />
+              <option value="WaitingOnOthers" />
+              <option value="Deferred" />
+            </param>
+            <param style="plain" name="Subject" path="/Subject" type="xs:string" required="true">
+              <doc title="Subject" />
+            </param>
+            <param style="plain" name="Body" path="/Body" type="service:request-TaskOS-Body">
+              <doc title="Body" />
+            </param>
+            <param style="plain" name="Categories" path="/Categories" type="service:TaskOS-Categories">
+              <doc title="Categories" />
+            </param>
+            <param style="plain" name="Importance" path="/Importance" type="xs:string">
+              <doc title="Importance" />
+              <option value="Low" />
+              <option value="Normal" />
+              <option value="High" />
+            </param>
+            <param style="plain" name="Sensitivity" path="/Sensitivity" type="xs:string">
+              <doc title="Sensitivity" />
+              <option value="Normal" />
+              <option value="Personal" />
+              <option value="Private" />
+              <option value="Confidential" />
+            </param>
+            <param style="plain" name="StartDateTime" path="/StartDateTime" type="service:request-TaskOS-StartDateTime">
+              <doc title="Start" />
+            </param>
+            <param style="plain" name="DueDateTime" path="/DueDateTime" type="service:request-TaskOS-DueDateTime">
+              <doc title="Due" />
+            </param>
+            <param style="plain" name="CompletedDateTime" path="/CompletedDateTime" type="service:request-TaskOS-CompletedDateTime">
+              <doc title="Completed" />
+            </param>
+            <param style="plain" name="IsReminderOn" path="/IsReminderOn" type="xs:boolean">
+              <doc title="Is reminder on" />
+            </param>
+            <param style="plain" name="ReminderDateTime" path="/ReminderDateTime" type="service:request-TaskOS-ReminderDateTime">
+              <doc title="Reminder" />
+            </param>
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:TaskOS" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/v3/me/taskfolders('{folder_id}')/tasks">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="folder_id" type="xs:string" required="true">
+        <doc title="The default 'Tasks' well-known folder name, or a programatic ID of a task folder, unique in the user's mailbox." />
+      </param>
+      <method siena:requiresAuthentication="true" name="POST" id="CreateTaskInFolderV3" actionName="CreateTaskInFolder_V3" siena:isDeprecated="false" siena:family="CreateTaskInFolder" siena:revision="3" siena:status="Preview">
+        <doc title="Create a task in folder&#xA;This operation creates a new task in the specified task folder in your mailbox." />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="Status" path="/Status" type="xs:string">
+              <doc title="Status" />
+              <option value="NotStarted" />
+              <option value="InProgress" />
+              <option value="Completed" />
+              <option value="WaitingOnOthers" />
+              <option value="Deferred" />
+            </param>
+            <param style="plain" name="Subject" path="/Subject" type="xs:string" required="true">
+              <doc title="Subject" />
+            </param>
+            <param style="plain" name="Body" path="/Body" type="service:request-TaskOS-Body">
+              <doc title="Body" />
+            </param>
+            <param style="plain" name="Categories" path="/Categories" type="service:TaskOS-Categories">
+              <doc title="Categories" />
+            </param>
+            <param style="plain" name="Importance" path="/Importance" type="xs:string">
+              <doc title="Importance" />
+              <option value="Low" />
+              <option value="Normal" />
+              <option value="High" />
+            </param>
+            <param style="plain" name="Sensitivity" path="/Sensitivity" type="xs:string">
+              <doc title="Sensitivity" />
+              <option value="Normal" />
+              <option value="Personal" />
+              <option value="Private" />
+              <option value="Confidential" />
+            </param>
+            <param style="plain" name="StartDateTime" path="/StartDateTime" type="service:request-TaskOS-StartDateTime">
+              <doc title="Start" />
+            </param>
+            <param style="plain" name="DueDateTime" path="/DueDateTime" type="service:request-TaskOS-DueDateTime">
+              <doc title="Due" />
+            </param>
+            <param style="plain" name="CompletedDateTime" path="/CompletedDateTime" type="service:request-TaskOS-CompletedDateTime">
+              <doc title="Completed" />
+            </param>
+            <param style="plain" name="IsReminderOn" path="/IsReminderOn" type="xs:boolean">
+              <doc title="Is reminder on" />
+            </param>
+            <param style="plain" name="ReminderDateTime" path="/ReminderDateTime" type="service:request-TaskOS-ReminderDateTime">
+              <doc title="Reminder" />
+            </param>
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:TaskOS" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/v2/me/tasks('{task_id}')">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="task_id" type="xs:string" required="true">
+        <doc title="The programatic task ID, unique in the user's mailbox." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="GetTaskV2" actionName="GetTask_V2" siena:isDeprecated="false" siena:family="GetTask" siena:revision="2" siena:status="Preview">
+        <doc title="Get a task&#xA;This operation gets a specific task." />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:TaskOS" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/v2/me/tasks('{task_id}')">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="task_id" type="xs:string" required="true">
+        <doc title="The programatic task ID, unique in the user's mailbox." />
+      </param>
+      <method siena:requiresAuthentication="true" name="PATCH" id="UpdateTaskV2" actionName="UpdateTask_V2" siena:isDeprecated="false" siena:family="UpdateTask" siena:revision="2" siena:status="Preview">
+        <doc title="Update a task&#xA;This operation is used to modify an existing task." />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="Status" path="/Status" type="xs:string">
+              <doc title="Status" />
+              <option value="NotStarted" />
+              <option value="InProgress" />
+              <option value="Completed" />
+              <option value="WaitingOnOthers" />
+              <option value="Deferred" />
+            </param>
+            <param style="plain" name="Subject" path="/Subject" type="xs:string">
+              <doc title="Subject" />
+            </param>
+            <param style="plain" name="Body" path="/Body" type="service:request-TaskOS-Body">
+              <doc title="Body" />
+            </param>
+            <param style="plain" name="Categories" path="/Categories" type="service:TaskOS-Categories">
+              <doc title="Categories" />
+            </param>
+            <param style="plain" name="Importance" path="/Importance" type="xs:string">
+              <doc title="Importance" />
+              <option value="Low" />
+              <option value="Normal" />
+              <option value="High" />
+            </param>
+            <param style="plain" name="Sensitivity" path="/Sensitivity" type="xs:string">
+              <doc title="Sensitivity" />
+              <option value="Normal" />
+              <option value="Personal" />
+              <option value="Private" />
+              <option value="Confidential" />
+            </param>
+            <param style="plain" name="StartDateTime" path="/StartDateTime" type="service:request-TaskOS-StartDateTime">
+              <doc title="Start" />
+            </param>
+            <param style="plain" name="DueDateTime" path="/DueDateTime" type="service:request-TaskOS-DueDateTime">
+              <doc title="Due" />
+            </param>
+            <param style="plain" name="CompletedDateTime" path="/CompletedDateTime" type="service:request-TaskOS-CompletedDateTime">
+              <doc title="Completed" />
+            </param>
+            <param style="plain" name="IsReminderOn" path="/IsReminderOn" type="xs:boolean">
+              <doc title="Is reminder on" />
+            </param>
+            <param style="plain" name="ReminderDateTime" path="/ReminderDateTime" type="service:request-TaskOS-ReminderDateTime">
+              <doc title="Reminder" />
+            </param>
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:TaskOS" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/v1/me/tasks('{task_id}')">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="task_id" type="xs:string" required="true">
+        <doc title="The programatic task ID, unique in the user's mailbox." />
+      </param>
+      <method siena:requiresAuthentication="true" name="DELETE" id="DeleteTaskV1" actionName="DeleteTask_V1" siena:isDeprecated="false" siena:family="DeleteTask" siena:revision="1" siena:status="Preview">
+        <doc title="Delete a task&#xA;This operation will delete an existing task." />
+        <request />
+      </method>
+    </resource>
+    <resource path="/{connectionId}/v2/me/tasks('{task_id}')/complete">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="task_id" type="xs:string" required="true">
+        <doc title="The programatic task ID, unique in the user's mailbox." />
+      </param>
+      <method siena:requiresAuthentication="true" name="POST" id="CompleteTaskV2" actionName="CompleteTask_V2" siena:isDeprecated="false" siena:family="CompleteTask" siena:revision="2" siena:status="Preview">
+        <doc title="Complete a task&#xA;Completes a task and sets the `CompletedDateTime` property to the current date, and `Status` property to `Completed`." />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:CompleteTask_V2_responses_200_def" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/taskfolders">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="CreateTaskFolder" actionName="CreateTaskFolder" visibility="advanced" siena:isDeprecated="false" siena:family="CreateTaskFolder" siena:revision="1">
+        <doc title="Create a task folder&#xA;This operation creates a new folder. Optionally, you may choose to put the new folder in an existing task group." />
+        <request>
+          <param style="query" name="groupId" type="xs:string">
+            <doc title="Group id for your task group." />
+          </param>
+          <representation mediaType="application/json">
+            <param style="plain" name="@odata.id" path="/@odata.id" type="xs:string" />
+            <param style="plain" name="Id" path="/Id" type="xs:string">
+              <doc title="Id" />
+            </param>
+            <param style="plain" name="Name" path="/Name" type="xs:string" required="true">
+              <doc title="Name" />
+            </param>
+            <param style="plain" name="ChangeKey" path="/ChangeKey" type="xs:string" />
+            <param style="plain" name="IsDefaultFolder" path="/IsDefaultFolder" type="xs:boolean" />
+            <param style="plain" name="ParentGroupKey" path="/ParentGroupKey" type="xs:string" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:TaskFolder" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/taskgroups">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="GetTaskGroups" actionName="GetTaskGroups" visibility="advanced" siena:isDeprecated="false" siena:family="GetAllTaskGroups" siena:revision="1">
+        <doc title="List all task groups&#xA;Returns a list of all the task groups in your mailbox." />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:GetTaskGroups_responses_200_def" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/taskgroups">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="CreateTaskGroup" actionName="CreateTaskGroup" visibility="advanced" siena:isDeprecated="false" siena:family="CreateTaskGroup" siena:revision="1">
+        <doc title="Create a task group&#xA;This operation is used to create a new task group in your mailbox." />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="@odata.id" path="/@odata.id" type="xs:string" />
+            <param style="plain" name="Id" path="/Id" type="xs:string">
+              <doc title="Id" />
+            </param>
+            <param style="plain" name="Name" path="/Name" type="xs:string" required="true">
+              <doc title="Name" />
+            </param>
+            <param style="plain" name="ChangeKey" path="/ChangeKey" type="xs:string" />
+            <param style="plain" name="IsDefaultGroup" path="/IsDefaultGroup" type="xs:boolean" />
+            <param style="plain" name="GroupKey" path="/GroupKey" type="xs:string" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:TaskGroup" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/taskgroups('{groupId}')/taskFolders">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="groupId" type="xs:string" required="true">
+        <doc title="Pick a task group." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="GetTaskFolders" actionName="GetTaskFolders" visibility="advanced" siena:isDeprecated="false" siena:family="GetTaskFoldersInGroup" siena:revision="1">
+        <doc title="List task folders in group&#xA;Returns a list of task folders in the given task group." />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:GetTaskFolders_responses_200_def" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/taskfolders('{folderId}')/tasks">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="folderId" type="xs:string" required="true">
+        <doc title="Pick a task folder." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="GetTasksByFolder" actionName="GetTasksByFolder" visibility="advanced" siena:isDeprecated="false" siena:family="GetTasksInFolder" siena:revision="1">
+        <doc title="List tasks in folder&#xA;This operation returns a list of tasks in a given folder." />
+        <request>
+          <param style="query" name="groupId" type="xs:string" required="true">
+            <doc title="Pick a task group." />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:GetTasksByFolder_responses_200_def" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/tasks">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="GetAllTasks" actionName="GetAllTasks" visibility="advanced" siena:isDeprecated="false">
+        <doc title="List all tasks&#xA;This operation returns a list of all your tasks." />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:GetAllTasks_responses_200_def" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/tasks">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="CreateTask" actionName="CreateTask" siena:isDeprecated="true" siena:family="CreateTask" siena:revision="1" siena:status="Production">
+        <doc title="Create a task&#xA;This operation is used to create a task in the specified task folder (defaults to My Tasks)." />
+        <request>
+          <param style="query" name="folderId" type="xs:string">
+            <doc title="Pick a task folder." />
+          </param>
+          <representation mediaType="application/json">
+            <param style="plain" name="DueDateTime" path="/DueDateTime" type="service:CreateTaskBody_DueDateTime_def" />
+            <param style="plain" name="ReminderDateTime" path="/ReminderDateTime" type="service:CreateTaskBody_ReminderDateTime_def" />
+            <param style="plain" name="StartDateTime" path="/StartDateTime" type="service:CreateTaskBody_StartDateTime_def" />
+            <param style="plain" name="Importance" path="/Importance" type="xs:string">
+              <doc title="Importance" />
+              <option value="Low" />
+              <option value="Normal" />
+              <option value="High" />
+            </param>
+            <param style="plain" name="Subject" path="/Subject" type="xs:string" required="true">
+              <doc title="Subject" />
+            </param>
+            <param style="plain" name="Status" path="/Status" type="xs:string">
+              <doc title="Status" />
+              <option value="NotStarted" />
+              <option value="InProgress" />
+              <option value="Completed" />
+              <option value="WaitingOnOthers" />
+              <option value="Deferred" />
+            </param>
+            <param style="plain" name="Sensitivity" path="/Sensitivity" type="xs:string">
+              <doc title="Sensitivity" />
+              <option value="Normal" />
+              <option value="Personal" />
+              <option value="Private" />
+              <option value="Confidential" />
+            </param>
+            <param style="plain" name="Body" path="/Body" type="service:CreateTaskBody_Body_def">
+              <doc title="Body" />
+            </param>
+            <param style="plain" name="Categories" path="/Categories" type="service:CreateTaskBody_Categories_def">
+              <doc title="Categories" />
+            </param>
+            <param style="plain" name="IsReminderOn" path="/IsReminderOn" type="xs:boolean" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:Task" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/v2/tasks">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="CreateTaskV2" actionName="CreateTaskV2" siena:isDeprecated="false" siena:family="CreateTask" siena:revision="2" siena:status="Production">
+        <doc title="Create a task (V2)&#xA;This operation is used to create a task in the specified task folder (defaults to My Tasks)." />
+        <request>
+          <param style="query" name="folderId" type="xs:string">
+            <doc title="Pick a task folder." />
+          </param>
+          <representation mediaType="application/json">
+            <param style="plain" name="DueDateTime" path="/DueDateTime" type="service:CreateTaskHTMLBody_DueDateTime_def" />
+            <param style="plain" name="ReminderDateTime" path="/ReminderDateTime" type="service:CreateTaskHTMLBody_ReminderDateTime_def" />
+            <param style="plain" name="StartDateTime" path="/StartDateTime" type="service:CreateTaskHTMLBody_StartDateTime_def" />
+            <param style="plain" name="Importance" path="/Importance" type="xs:string">
+              <doc title="Importance" />
+              <option value="Low" />
+              <option value="Normal" />
+              <option value="High" />
+            </param>
+            <param style="plain" name="Subject" path="/Subject" type="xs:string" required="true">
+              <doc title="Subject" />
+            </param>
+            <param style="plain" name="Status" path="/Status" type="xs:string">
+              <doc title="Status" />
+              <option value="NotStarted" />
+              <option value="InProgress" />
+              <option value="Completed" />
+              <option value="WaitingOnOthers" />
+              <option value="Deferred" />
+            </param>
+            <param style="plain" name="Sensitivity" path="/Sensitivity" type="xs:string">
+              <doc title="Sensitivity" />
+              <option value="Normal" />
+              <option value="Personal" />
+              <option value="Private" />
+              <option value="Confidential" />
+            </param>
+            <param style="plain" name="Body" path="/Body" type="service:CreateTaskHTMLBody_Body_def">
+              <doc title="Body" />
+            </param>
+            <param style="plain" name="Categories" path="/Categories" type="service:CreateTaskHTMLBody_Categories_def">
+              <doc title="Categories" />
+            </param>
+            <param style="plain" name="IsReminderOn" path="/IsReminderOn" type="xs:boolean" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:TaskHTML" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/tasks('{taskId}')/complete">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="taskId" type="xs:string" required="true">
+        <doc title="Unique id of the task to complete." />
+      </param>
+      <method siena:requiresAuthentication="true" name="POST" id="CompleteTask" actionName="CompleteTask" visibility="important" siena:isDeprecated="false">
+        <doc title="Complete a task&#xA;This operation marks the given task as complete." />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:Task" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/tasks('{taskId}')">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="taskId" type="xs:string" required="true">
+        <doc title="Unique id of the task." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="GetTask" actionName="GetTask" siena:isDeprecated="false">
+        <doc title="Get a task&#xA;This operation is used to retrieve the details of a task by its id." />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:Task" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/tasks('{taskId}')">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="taskId" type="xs:string" required="true">
+        <doc title="Unique id of the task." />
+      </param>
+      <method siena:requiresAuthentication="true" name="PATCH" id="IncompleteTask" actionName="IncompleteTask" visibility="advanced" siena:isDeprecated="false">
+        <doc title="Mark a task as incomplete&#xA;This operation is used to mark the given task as incomplete." />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="Status" path="/Status" type="xs:string" default="InProgress" />
+            <param style="plain" name="CompletedDateTime" path="/CompletedDateTime" type="service:IncompleteTaskBody_CompletedDateTime_def" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:Task" />
+        </response>
+      </method>
+    </resource>
+  </resources>
+  <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="shared_outlooktasks" />
+  </authenticationProviders>
+  <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <variable name="connectionId">
+      <modifyParams style="template" name="connectionId" attribute="fixed" />
+    </variable>
+  </template>
+</application>
